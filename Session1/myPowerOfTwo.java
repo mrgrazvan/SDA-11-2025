@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class mySolution {
+public class myPowerOfTwo {
     // public static
     public static boolean isPowerOfTwo(int n) {
         return n > 0 && (n & n - 1) == 0;
