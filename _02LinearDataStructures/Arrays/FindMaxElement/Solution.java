@@ -1,3 +1,4 @@
+package _02LinearDataStructures.Arrays.FindMaxElement;
 
 public class Solution {
     public static int findMaxElement(int[] numbers) {

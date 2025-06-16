@@ -1,6 +1,8 @@
 package TwoSum;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 // import java.util.Arrays;
 
@@ -59,12 +61,29 @@ public class Solutions {
         return -1;
      }
 
+    //O(n)
+    public static int[] solveTwoSumWithMaps(int[] numbers, int target) {
+        Map<Integer,Integer> map = new HashMap<>();
+
+        for(int i = 0; i <= numbers.length - 1; i++) {
+            int complement = target - numbers[i];
+
+            if(map.containsKey(complement)) {
+                return new int[] {map.get(complement), i};
+            }
+
+            map.put(numbers[i], i);
+        }
+
+        return new int[] {-1,-1};
+    }
+
     public static void main(String[] args) {
         int[] numbers = {1, 3, 4, 8, 12, 1};
         // Arrays.asList(solveTwoSum(numbers, 9)).forEach(System.out::println);
         solveTwoSum(numbers, 9);
 
          System.out.println( Arrays.toString(solveTwoSumUsingBinarySearch(numbers, 9)));
-
+         System.out.println(Arrays.toString(solveTwoSumWithMaps(numbers, 9)));
     }     
 }
